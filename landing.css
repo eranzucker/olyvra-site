@@ -1,0 +1,126 @@
+:root {
+  --canvas: #f5f2ec;
+  --panel: #ece8df;
+  --ink: #1f2a24;
+  --muted: #62675f;
+  --brand: #3c5e4c;
+  --brand-deep: #2f4b3d;
+  --on-brand: #f5f2ec;
+  --on-brand-muted: #cfdad2;
+  --rule: #dcd8cf;
+  --bezel: #141614;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #121513;
+    --panel: #1b201c;
+    --ink: #ece9e2;
+    --muted: #9fa59c;
+    --rule: #2b302c;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 18px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2 { font-family: ui-serif, "New York", Georgia, serif; font-weight: 400; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(42px, 7vw, 72px); line-height: 1.04; }
+h2 { font-size: clamp(32px, 4.6vw, 48px); line-height: 1.1; }
+p { margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.lede { font-size: clamp(19px, 2.2vw, 22px); line-height: 1.45; }
+.muted { color: var(--muted); }
+
+/* Top bar and hero share the brand green */
+.hero { background: var(--brand); color: var(--on-brand); overflow: hidden; }
+.bar { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: ui-serif, "New York", Georgia, serif; font-size: 22px; }
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.bar nav { display: flex; gap: 20px; font-size: 16px; }
+.bar nav a { text-decoration: none; }
+.bar nav a:hover { text-decoration: underline; }
+.bar nav a.wide { display: none; }
+.hero-grid { display: grid; gap: 40px; align-items: center; padding: 28px 0 0; }
+.hero .lede { color: var(--on-brand-muted); margin: 20px 0 28px; max-width: 34em; }
+.get { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.get img { height: 54px; width: auto; }
+.get span { font-size: 15px; color: var(--on-brand-muted); }
+.hero .phone { margin: 0 auto -90px; }
+
+/* A simple phone around a real app screen */
+.phone { width: min(300px, 76vw); padding: 9px; background: var(--bezel); border-radius: 46px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28); }
+.phone img { border-radius: 38px; width: 100%; }
+
+/* The Today screen, close up on the count and its range */
+.crop { width: min(380px, 84vw); margin: 0 auto; aspect-ratio: 660 / 590; border-radius: 32px; overflow: hidden; background: #f5f2ec; box-shadow: 0 16px 44px rgba(0, 0, 0, 0.16); }
+.crop img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35.5%; }
+
+/* The limits */
+.limits { padding-top: 64px; padding-bottom: 72px; }
+.limit-grid { display: grid; gap: 12px; margin: 32px 0 20px; }
+.limit { background: var(--panel); border-radius: 18px; padding: 20px; }
+.limit b { display: block; font-family: ui-serif, "New York", Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 34px); line-height: 1.1; overflow-wrap: break-word; }
+.limit span { display: block; margin-top: 10px; font-size: 16px; line-height: 1.35; }
+.limit small { display: block; margin-top: 4px; font-size: 14px; line-height: 1.35; color: var(--muted); }
+
+/* Features */
+.feature { display: grid; gap: 32px; align-items: center; padding: 56px 0; border-top: 1px solid var(--rule); }
+.feature .phone { margin: 0 auto; }
+.feature h2 { margin-bottom: 16px; }
+.feature p { max-width: 30em; }
+
+/* Privacy */
+.privacy { background: var(--brand); color: var(--on-brand); padding: 72px 0; }
+.privacy .lede { color: var(--on-brand-muted); margin-top: 16px; max-width: 34em; }
+.privacy ul { list-style: none; margin: 32px 0 24px; padding: 0; display: grid; gap: 14px 40px; }
+.privacy li { padding-top: 14px; border-top: 1px solid rgba(245, 242, 236, 0.28); }
+.privacy a { color: var(--on-brand); }
+
+/* Price */
+.price { padding-top: 72px; padding-bottom: 72px; }
+.price .lede { margin-top: 16px; max-width: 34em; }
+.cols { display: grid; gap: 12px; margin: 32px 0; }
+.col { background: var(--panel); border-radius: 18px; padding: 24px; }
+.col h3 { margin: 0 0 12px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+.col ul { margin: 0; padding-left: 20px; }
+.col li { margin-bottom: 6px; }
+.price .get img { height: 54px; }
+.price .get span { color: var(--muted); }
+
+/* Questions */
+.faq { padding-bottom: 72px; }
+.faq h2 { margin-bottom: 24px; }
+details { border-top: 1px solid var(--rule); padding: 16px 0; }
+details:last-of-type { border-bottom: 1px solid var(--rule); }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin-top: 10px; max-width: 42em; color: var(--muted); }
+
+footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; font-size: 15px; color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
+footer p + p { margin-top: 10px; }
+
+a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+
+@media (min-width: 520px) {
+  .limit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1000px) {
+  .limit-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 760px) {
+  .bar nav a.wide { display: inline; }
+  .hero-grid { grid-template-columns: 1.15fr 0.85fr; padding-top: 48px; }
+  .hero .phone { margin: 0 0 -120px auto; }
+  .limits { padding-top: 88px; }
+  .feature { grid-template-columns: 1fr 1fr; gap: 56px; padding: 72px 0; }
+  .feature:nth-of-type(even) .phone, .feature:nth-of-type(even) .crop { order: -1; }
+  .privacy ul { grid-template-columns: 1fr 1fr; }
+  .cols { grid-template-columns: 1fr 1fr; }
+}
