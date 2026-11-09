@@ -76,6 +76,10 @@ p { margin: 0; }
 .feature h2 { margin-bottom: 16px; }
 .feature p { max-width: 30em; }
 
+/* The tutorial: portrait, with its own green background */
+.clip { width: min(300px, 76vw); margin: 0 auto; }
+.clip video { display: block; width: 100%; height: auto; border-radius: 26px; background: var(--brand); box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2); }
+
 /* Privacy */
 .privacy { background: var(--brand); color: var(--on-brand); padding: 72px 0; }
 .privacy .lede { color: var(--on-brand-muted); margin-top: 16px; max-width: 34em; }
@@ -120,7 +124,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outlin
   .hero .phone { margin: 0 0 -120px auto; }
   .limits { padding-top: 88px; }
   .feature { grid-template-columns: 1fr 1fr; gap: 56px; padding: 72px 0; }
-  .feature:nth-of-type(even) .phone, .feature:nth-of-type(even) .crop { order: -1; }
+  .feature:nth-of-type(even) .phone, .feature:nth-of-type(even) .crop, .feature:nth-of-type(even) .clip { order: -1; }
   .privacy ul { grid-template-columns: 1fr 1fr; }
   .cols { grid-template-columns: 1fr 1fr; }
 }
